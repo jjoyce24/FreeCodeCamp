@@ -40,23 +40,11 @@ function generateQuote() {
 		$('.person').text(randomQuote.person);
 		said = randomQuote.quote.split(' ').join('%20');
 		speaker = randomQuote.person.split(' ').join('%20');
+
 	}
 }
 
-$(document).ready(function() {
-	$('.btn-tweet').hide();
-	$('.btn-quote').on('click', function() {
-		generateQuote();
-		if (speaker === 'Albert Einstein') {
-			$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=%23Albert Einstein%20said,%20"' + said + '"%20%23science%20https://goo.gl/MOxWg1');
-		} else {
-			$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + speaker + '%20said,%20"' + said + '"%20%23science%20https://goo.gl/MOxWg1');
-		}
-		$('.btn-tweet').show();
-	});
-});
-
-(function() {
+function twitterButton() {
   if (window.__twitterIntentHandler) return;
   var intentRegex = /twitter\.com(\:\d{2,4})?\/intent\/(\w+)/,
       windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes',
@@ -98,4 +86,17 @@ $(document).ready(function() {
     document.attachEvent('onclick', handleIntent);
   }
   window.__twitterIntentHandler = true;
-}());
+};
+
+$(document).ready(function() {
+	$('.btn-tweet').hide();
+	$('.btn-quote').on('click', function() {
+		generateQuote();
+		if (speaker === 'Albert Einstein') {
+			$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=%23Albert Einstein%20said,%20"' + said + '"%20%23science%20https://goo.gl/MOxWg1');
+		} else {
+			$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + speaker + '%20said,%20"' + said + '"%20%23science%20https://goo.gl/MOxWg1');
+		}
+		$('.btn-tweet').show();
+	});
+});
