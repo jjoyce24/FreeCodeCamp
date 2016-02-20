@@ -6,6 +6,23 @@ $.getJSON('http://ip-api.com/json', function(ipAddress) {
     var backgroundPic = forecast.weather[0].icon.substring(0, 2);
 
     $(document).ready(function() {
+      if (backgroundPic === '01' || backgroundPic === '02' || backgroundPic === '03') {
+        $('body').css('background-image', 'url("images/clear-sky.jpg")');
+      } else if (backgroundPic === '04') {
+        $('body').css('background-image', 'url("images/cloudy.jpg")');
+      } else if (backgroundPic === '09') {
+        $('body').css('background-image', 'url("images/little-rain.jpg")');
+      } else if (backgroundPic === '10') {
+        $('body').css('background-image', 'url("images/rain.jpg")');
+      } else if (backgroundPic === '11') {
+        $('body').css('background-image', 'url("images/lightning.jpg")');
+      } else if (backgroundPic === '13') {
+        $('body').css('background-image', 'url("images/snow.jpg")');
+      } else if (backgroundPic === '50') {
+        $('body').css('background-image', 'url("images/fog.jpg")');
+      } else {
+        $('body').css('background-image', 'url("images/def.jpg")');
+      }
       $('.information').text('Hello ' + ipAddress.city + '!');
       $('.btn-check').on('click', function() {
         $('.btn-check').hide();
