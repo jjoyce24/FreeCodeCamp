@@ -9,7 +9,7 @@ $.getJSON('http://ip-api.com/json', function(ipAddress) {
       if (backgroundPic === '01' || backgroundPic === '02' || backgroundPic === '03') {
         $('body').css('background-image', 'url("images/clear-sky.jpg")');
       } else if (backgroundPic === '04') {
-        $('body').css('background-image', 'url("images/cloudy.jpg")');
+        $('body').css('background-image', 'url("images/cloudy-day.jpg")');
       } else if (backgroundPic === '09') {
         $('body').css('background-image', 'url("images/little-rain.jpg")');
       } else if (backgroundPic === '10') {
