@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html ng-app="WikipediaApplication">
+	<head>
+		<title>Wikipedia Viewer</title>
+
+		<!-- Foundation CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.1.2/foundation.min.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Raleway:100,300" rel="stylesheet" type="text/css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<!-- Angular JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+		<!-- Custom JS -->
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body ng-controller="WikipediaController">
+		<div id="wikipedia" class="small-10 small-offset-1 medium-8 medium-offset-2 large-6 large-offset-3 columns vertical">
+
+			<h1 class="text-center margin">Wikipedia Viewer</h1>
+
+			<div class="row">
+				<div class="small-8 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
+					<form>
+						<input type="text" placeholder="Search Wikipedia" ng-model="searchTerm" ng-change="searchWikipedia()">
+					</form>
+				</div>
+			</div>
+			<p class="text-center"><a href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">Or click here for a random article</a></p>
+
+			<a href="https://en.wikipedia.org/?curid={{ result.pageid }}" target="_blank" ng-repeat="result in results">
+				<div class="callout large">
+					<h2>{{ result.title }}</h2>
+					<p>{{ result.extract }}</p>
+				</div>
+			</a>
+
+		</div>
+	</body>
+</html>
