@@ -1,31 +1,88 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #83a4d4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #83a4d4 , #b6fbff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+}
 
 body {
-background: #83a4d4; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #83a4d4 , #b6fbff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */               
-},
-h1,
-h2 {
-	font-family: 'Changa One', sans-serif;
+  display: flex;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 17px;
 }
 
-.vertical {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.mainForm{
+  text-align: center;
+  margin: auto; 
 }
 
-.callout:hover {
-background: #ECE9E6; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.mainTitle {
+  font-family: 'Passion One', cursive;
+  font-size: 40px;
+  color: #34495e;
+  padding-bottom: 20px;
 }
 
-h1 {
-	font-size: 4rem;
-	font-weight: 300;
+.searchBox {
+  min-width: 300px;
+  padding: 4px;
+  border-radius: 5px;
+  margin: auto;
 }
 
-h2 {
-	text-transform: uppercase;
+.searchButtons {
+  padding: 10px;
 }
+
+.searchResult {
+padding: 0 20px 20px 0;
+}
+
+.box {
+  width: 275px;
+  min-height: 250px;
+  margin: 20px 0 0 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  display: inline-block;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 1px 2px #ccc;
+  background: #fff;
+  height: 350px;
+}
+
+.info {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.thumb {
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 200px;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: bold;
+  font-size: .9em;
+  color: #555;
+}
+
+.desc {
+  padding-top: 5px;
+  color: #777;
+  height: 150px;
+  font-size: .9em;
+}
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { 
