@@ -1,6 +1,6 @@
 var endpoint = 'https://en.wikipedia.org/w/api.php';
 
-$('.searchBox').autocomplete({
+$('#search').autocomplete({
   serviceUrl: endpoint,
   dataType: 'jsonp',
   paramName: 'search',
@@ -18,14 +18,14 @@ $('.searchBox').autocomplete({
   }
 });
 
-$('.searchBox').keypress(function(key){
+$('#search').keypress(function(key){
   if (key.which === 13) { //ENTER KEY
     $('.searchBtn').click();
   }
 });
 
 $('.searchBtn').click(function() {
-  var searchString = $('.searchBox').val();
+  var searchString = $('#search').val();
   getJson(searchString);
 });
 
@@ -41,7 +41,7 @@ $('.randomBtn').click(function() {
       },
       success: function(data) {
         var title = data.query.random[0].title;
-        $('.searchBox').val(title);
+        $('#search').val(title);
         getJson(title);
       }
   });
