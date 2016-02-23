@@ -1,6 +1,6 @@
 var endpoint = 'https://en.wikipedia.org/w/api.php';
 
-$('#search').autocomplete({
+$('.searchBox').autocomplete({
   serviceUrl: endpoint,
   dataType: 'jsonp',
   paramName: 'search',
@@ -18,33 +18,15 @@ $('#search').autocomplete({
   }
 });
 
-$('#search').keypress(function(key){
+$('.searchBox').keypress(function(key){
   if (key.which === 13) { //ENTER KEY
     $('.searchBtn').click();
   }
 });
 
 $('.searchBtn').click(function() {
-  var searchString = $('#search').val();
+  var searchString = $('.searchBox').val();
   getJson(searchString);
-});
-
-$('.randomBtn').click(function() {
-  $.ajax({
-      url: 'https://en.wikipedia.org/w/api.php',
-      dataType: 'jsonp',
-      data: {
-        action: 'query',
-        list: 'random',
-        format: 'json',
-        rnnamespace: 0
-      },
-      success: function(data) {
-        var title = data.query.random[0].title;
-        $('#search').val(title);
-        getJson(title);
-      }
-  });
 });
 
 function getJson(searchString) {
