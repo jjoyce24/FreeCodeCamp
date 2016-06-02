@@ -32,18 +32,25 @@ $(document).ready(function(){
         }
     });
     $("#equals").click(function(){
-        if (operator === "+"){
-        number = (parseInt(number, 10) + parseInt(newnumber,10)).toString(10);
-        } else if (operator === "-"){
-        number = (parseInt(newnumber, 10) - parseInt(number,10)).toString(10);
-        } else if (operator === "/"){
-        number = (parseInt(newnumber, 10) / parseInt(number,10)).toString(10);
-        } else if (operator === "*"){
-        number = (parseInt(newnumber, 10) * parseInt(number,10)).toString(10);
-        }
-    totaldiv.text(number);
-    testNumLength(number);
-    number = "";
-    newnumber = "";
+        number = parseInt(number,10);
+        newnumber = parseInt(newnumber,10);
+        var result;
+            if (operator==="+"){
+                result = newnumber+number;
+            }
+            else if (operator==="-"){
+                result = newnumber - number;
+            }
+            else if (operator==="*"){
+                result = newnumber * number;
+            }
+            else if (operator==="/"){
+                result = newnumber / number;
+            }
+        result = result.toString(10);
+        totaldiv.text(result);
+        testNumLength(result);
+        number = "";
+        newnumber = "";
     });
 });
