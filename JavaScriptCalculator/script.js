@@ -18,7 +18,12 @@ $(document).ready(function(){
         totaldiv.text(number);
         testNumLength(number);
     });
-    $("#operators > a").not("#equals").click(function(){
+    $("#operators > a, #side > a").not("#equals, #decimal").click(function(){
+        if ($(this).text() === "√"){
+            operator = "sqrt";
+            $("#equals").click();
+            return;
+        }
         operator = $(this).text();
         newnumber = number;
         number = "";
@@ -31,25 +36,41 @@ $(document).ready(function(){
             newnumber = "";
         }
     });
+    $("#decimal").click(function(){
+        var numOfDecs = 0;
+        for (i=0;i<number.length;i++){
+            if (number[i] === "."){
+            numOfDecs++;
+            }
+        }
+        if (numOfDecs > 0) {
+            number = number;
+            number = round(number,9);
+            totaldiv.text(number);
+        } else {
+            number += ".";
+            number = round(number,9);
+            totaldiv.text(number);
+        }
+        testNumLength(number);
+    });
+    //Add your last .click() here!
     $("#equals").click(function(){
-        number = parseInt(number,10);
-        newnumber = parseInt(newnumber,10);
-        var result;
-            if (operator==="+"){
-                result = newnumber+number;
-            }
-            else if (operator==="-"){
-                result = newnumber - number;
-            }
-            else if (operator==="*"){
-                result = newnumber * number;
-            }
-            else if (operator==="/"){
-                result = newnumber / number;
-            }
-        result = result.toString(10);
-        totaldiv.text(result);
-        testNumLength(result);
+        if (operator === "+"){
+            number = (parseInt(number, 10) + parseInt(newnumber,10)).toString(10);
+        } else if (operator === "-"){
+            number = (parseInt(newnumber, 10) - parseInt(number,10)).toString(10);
+        } else if (operator === "/"){
+            number = (parseInt(newnumber, 10) / parseInt(number,10)).toString(10);
+        } else if (operator === "*"){
+            number = (parseInt(newnumber, 10) * parseInt(number,10)).toString(10);
+        } else if (operator === "sqrt") {
+            number = Math.sqrt(parseFloat(number,10)).toString(10);
+        } else if (operator === "^") {
+            number = ((Math.pow(parseFloat(newnumber,10),parseFloat(number,10))).toString(10));
+        }
+        totaldiv.text(number);
+        testNumLength(number);
         number = "";
         newnumber = "";
     });

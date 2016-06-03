@@ -1,4 +1,5 @@
-body, div, a {
+
+* {
     padding:0;
     margin:0;
     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -17,42 +18,6 @@ body, div, a {
     border-radius: 10px;
 }
 
-#calculator a {
-    display: block;
-    float: left;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    background: -moz-linear-gradient(top, #EDEDED, #DCDCDC);
-    background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC));
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EDEDED', endColorstr='#DCDCDC');
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
-    color: black;
-}
-
-#numbers, #operators {
-    margin: auto;   
-}
-
-#operators a {
-    width: 46px;
-    height: 45px;
-    font-size: 39px;
-    padding: 2px;
-    margin: 5px 6px;
-}
-
-#numbers a {
-    width: 50px;
-    height: 50px;
-    font-size: 32px;
-    padding: 10px;
-    margin: 5px;
-}
-
 #total {
     height: 70px;
     width: 300px;
@@ -64,21 +29,76 @@ body, div, a {
     padding: 0px 5px;
 }
 
+#numbers, #operators {
+    margin: auto;    
+}
+
+#operators > a {
+    display: block;
+    width: 46px;
+    height: 45px;
+     -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    float: left;
+    background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(gainsboro));
+    background: -moz-linear-gradient(top, #EDEDED, gainsboro);
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 39px;
+    padding: 2px;
+    margin: 5px 5px;
+}
+
 #side {
     width: 49px;
     float: right;
 }
 
-#side a {
+#numbers > a {
+    display: block;
+    width: 50px;
+    height: 50px;
+     -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    float: left;
+    background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(gainsboro));
+    background: -moz-linear-gradient(top, #EDEDED, gainsboro);
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 32pt;
+    padding: 10px;
+    margin: 5px 5px;
+}
+
+#side > a{
+    display: block;
     width: 40px;
     height: 40px;
+     -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
     float: right;
-    font-size: 32px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(gainsboro));
+    background: -moz-linear-gradient(top, #EDEDED, gainsboro);
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 32pt;
     padding: 10px;
-    margin: 5px;
+    margin: 5px 5px;
 }
 
 a#equals {
     padding-top: 50px;
     height: 100px;
 }
+
+a:hover{
+    background: -webkit-gradient(linear, left top, left bottom, from(#DCDCDC), to(#EDEDED));
+    background: -moz-linear-gradient(top,  #DCDCDC,  #EDEDED);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DCDCDC', endColorstr='#EDEDED');
+}​
