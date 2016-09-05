@@ -4,38 +4,36 @@
     <head>
         <title>Calculator</title>
         <link rel="stylesheet" href="style.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
         <script src="script.js"></script>
     </head>
     <body>
         <div id="calculator">
-            <div id="total">
+            <!-- Screen and clear key -->
+            <div class="top">
+                <span class="clear" data-value="C">C</span>
+                <div class="input"></div>
+            <div class="result"></div>
             </div>
-            <div id="operators">
-                <a>+</a>
-                <a>-</a>
-                <a>/</a>
-                <a>*</a>
-            </div>
-            <div id="side">
-                <a id="sq">^</a>
-                <a id="sqrt">√</a>
-                <a id="decimal">.</a>
-                <a id="equals">=</a>
-            </div>
-            <div id="numbers">
-                <a>1</a>
-                <a>2</a>
-                <a>3</a>
-                <a>4</a>
-                <a>5</a>
-                <a>6</a>
-                <a>7</a>
-                <a>8</a>
-                <a>9</a>
-                <a id="clear">C</a>
-                <a>0</a>
-                <a id="clearall">AC</a>
+            
+            <div class="keys">
+                <!-- operators and other keys -->
+                <span data-value="7">7</span>
+                <span data-value="8">8</span>
+                <span data-value="9">9</span>
+                <span class="operator" data-value="/">/</span>
+                <span data-value="4">4</span>
+                <span data-value="5">5</span>
+                <span data-value="6">6</span>
+                <span class="operator" data-value="*">x</span>
+                <span data-value="1">1</span>
+                <span data-value="2">2</span>
+                <span data-value="3">3</span>
+                <span class="operator" data-value="-">-</span>
+                <span data-value="0">0</span>
+                <span data-value=".">.</span>
+                <span class="equals" data-value="=">=</span>
+                <span class="operator" data-value="+">+</span>
             </div>
         </div>
     </body>
