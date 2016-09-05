@@ -1,15 +1,15 @@
 // Get all the keys from document
 var keys = document.querySelectorAll('#calculator span');
-var operators = ['+', '-', 'x', '÷'];
+var operators = ['+', '-', 'x', '÷'];å
 var decimalAdded = false;
 
 // Add onclick event to all the keys and perform operations
 for(var i = 0; i < keys.length; i++) {
     keys[i].onclick = function(e) {
         // Get the input and button values
-        var input = document.querySelector('.input');
+        var input = document.querySelector('.screen');
         var inputVal = input.innerHTML;
-        var btnVal = this.getAttribute("data-value");
+        var btnVal = this.innerHTML;
         
         // Now, just append the key values (btnValue) to the input string and finally use javascript's eval function to get the result
         // If clear key is pressed, erase everything
@@ -35,13 +35,6 @@ for(var i = 0; i < keys.length; i++) {
                 
             decimalAdded = false;
         }
-        
-        // Basic functionality of the calculator is complete. But there are some problems like 
-        // 1. No two operators should be added consecutively.
-        // 2. The equation shouldn't start from an operator except minus
-        // 3. not more than 1 decimal should be there in a number
-        
-        // We'll fix these issues using some simple checks
         
         // indexOf works only in IE9+
         else if(operators.indexOf(btnVal) > -1) {

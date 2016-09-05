@@ -1,104 +1,94 @@
-
 * {
-    padding:0;
-    margin:0;
-    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  box-sizing:border-box;
+  font-family:'Open Sans',Helvetica,Arial,sans-serif;
+  font-size: 24px;
+  font-size:4vw;
+  font-weight: 300;
+  margin:0;
+  padding:0;
+}
+
+html {
+  height:100%;
+  background: radial-gradient(circle,#fff,#ddd);
+  background-size:cover;
 }
 
 #calculator {
-    background-color: #999;
-    width: 310px;
-    height: 460px;
-    border: 3px black solid;
-    margin: 10px auto;
-    padding: 5px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
+  width: 12em;
+  height:auto;
+  background: #4CB8C4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #4CB8C4 , #3CD3AD); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #4CB8C4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+  margin: 1em auto;
 }
 
-#total {
-    height: 70px;
-    width: 300px;
-    margin:auto;
-    background-color:white;
-    margin-bottom: 5px;
-    text-align: right;
-    font-size: 60px;
-    padding: 0px 5px;
+.top span.clear {
+float:left;
+box-shadow:0 4px #ff7c87;
+color:#FFF;
 }
 
-#numbers, #operators {
-    margin: auto;    
+.top .input {
+height:3em;
+width:9em;
+  padding-right: 1em;
+float:right;
+color:#FFF;
+line-height: 3em;
+text-align:right;
+letter-spacing:1px;
+border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 
-#operators > a {
-    display: block;
-    width: 46px;
-    height: 45px;
-     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    float: left;
-    background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(gainsboro));
-    background: -moz-linear-gradient(top, #EDEDED, gainsboro);
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    font-size: 39px;
-    padding: 2px;
-    margin: 5px 5px;
+.keys,.top {
+overflow:hidden;
 }
 
-#side {
-    width: 49px;
-    float: right;
+.keys span,.top span.clear {
+float:left;
+cursor:pointer;
+width:3em;
+height:3em;
+line-height: 3em;
+color:#fff;
+text-align:center;
+user-select:none;
+transition: background-color .2s ease;
+  border-right: 1px solid rgba(255,255,255,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 
-#numbers > a {
-    display: block;
-    width: 50px;
-    height: 50px;
-     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    float: left;
-    background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(gainsboro));
-    background: -moz-linear-gradient(top, #EDEDED, gainsboro);
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    font-size: 32pt;
-    padding: 10px;
-    margin: 5px 5px;
+.keys span.operator {
+background:rgba(255,255,255,0.2);
+border-right: 0;
+  color: rgba(0,0,0,0.5);
 }
 
-#side > a{
-    display: block;
-    width: 40px;
-    height: 40px;
-     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    float: right;
-    background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(gainsboro));
-    background: -moz-linear-gradient(top, #EDEDED, gainsboro);
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    font-size: 32pt;
-    padding: 10px;
-    margin: 5px 5px;
+.keys span.equals {
+color:#888e5f;
 }
 
-a#equals {
-    padding-top: 50px;
-    height: 100px;
+.keys span:hover {
+background:rgba(255,255,255,0.3);
+color:#FFF;
 }
 
-a:hover{
-    background: -webkit-gradient(linear, left top, left bottom, from(#DCDCDC), to(#EDEDED));
-    background: -moz-linear-gradient(top,  #DCDCDC,  #EDEDED);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DCDCDC', endColorstr='#EDEDED');
-}​
+.keys span.equals:hover {
+background:rgba(255,255,255,0.2);
+color:#fff;
+}
+
+.top span.clear:hover {
+background:rgba(255,255,255,0.2);
+color:#FFF;
+}
+
+.keys span:active {
+}
+
+.keys span.equals:active {
+}
+
+.top span.clear:active {
+}
