@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var buzzer = $("#buzzer")[0]; 
+	// var buzzer = $("#buzzer")[0]; add audio file
 	var count = parseInt($("#num").html());
 	var breakTime = parseInt($("#breakNum").html());
 	$("#reset").hide();
@@ -8,13 +8,25 @@ $(document).ready(function(){
 		function timer(){
 			// Hide variables
 			$("#start, #minus5Clock, #add5Clock, #minus5Break, #add5Break, #breakNum, #title1, #title2").hide();
-			$("#timeType").html("Tomato Time:")
+			$("#timeType").html("Tomato Time: ")
 			count -= 1;
 			if (count === 0){
-				
+				// add audio file buzzer.play()
 				clearInterval(counter);
+				var startBreak = setInterval(breakTimer, 1000)
+				$("#num").hide();
 			}
-			$("#num").html(count)
+			$("#num").html(count);
+
+			function breakTimer(){
+				$("#timeType").html("Break Time: ")
+				$("#breakNum").show();
+				breakTime -= 1;
+				if (breakTime === 0){
+					clearInterval(startBreak)
+				}
+				$("#breakNum").html(breakTime);
+			}
 		}
 	})
 
