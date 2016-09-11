@@ -5,6 +5,7 @@ $(document).ready(function(){
 	$("#reset").hide();
 	$("#start").click(function(){
 		var counter = setInterval(timer, 1000);
+		count *= 60;
 		function timer(){
 			// Hide variables
 			$("#start, #minus5Clock, #add5Clock, #minus5Break, #add5Break, #breakNum, #title1, #title2").hide();
@@ -17,19 +18,34 @@ $(document).ready(function(){
 				var startBreak = setInterval(breakTimer, 1000)
 				$("#num").hide();
 			}
-			$("#num").html(count);
+			if (count%60 >= 10){
+				$("#num").html(Math.floor(count/60) + ":" + count%60);
+			} 
+
+			else{
+				$("#num").html(Math.floor(count/60) + ":" + "0" + count%60);
+			}
 
 			function breakTimer(){
 				$("#timeType").show();
 				$("#timeType").html("Break Time: ")
 				$("#breakNum").show();
+				breakTime *= 60
 				breakTime -= 1;
 				if (breakTime === 0){
 					clearInterval(startBreak);
 					$("#reset").show();
 					$("#breakNum, #timeType").hide();
 				}
-				$("#breakNum").html(breakTime);
+
+				if (breakTime%60 >= 10){
+					$("#breakNum").html(Math.floor(breakTime/60) + ":" + breakTime%60);
+				} 
+
+				else{
+					$("#breakNum").html(Math.floor(breakTime/60) + ":" + "0" + breakTime%60);
+				}
+
 			}
 		}
 	})
