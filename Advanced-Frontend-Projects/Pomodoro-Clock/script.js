@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	// var buzzer = $("#buzzer")[0]; add audio file
+	var buzzer = $("#buzzer")[0];
 	var count = parseInt($("#num").html());
 	var breakTime = parseInt($("#breakNum").html());
 	$("#reset").hide();
@@ -13,7 +13,7 @@ $(document).ready(function(){
 			$("#timeType").html("Tomato Time: ")
 			count -= 1;
 			if (count === 0){
-				// add audio file buzzer.play()
+				buzzer.play()
 				clearInterval(counter);
 				var startBreak = setInterval(breakTimer, 1000)
 				$("#num").hide();
